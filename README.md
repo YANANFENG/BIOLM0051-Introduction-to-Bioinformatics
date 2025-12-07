@@ -3,10 +3,15 @@ Introduction to Bioinformatics Assignment# BIOLM0051-Introduction-to-Bioinformat
 This repository contains scripts and data used for analyzing DNA sequence data, specifically for the task of identifying species in a set of seized meat samples. The analysis includes processing raw FASTQ data, converting it to FASTA, translating sequences to amino acids, and conducting species identification using BLAST and phylogenetic tree construction using EBI tools.
 
 file structure：
+
 Sample_data/
+
    fasta_output/: Contains the output files after processing the raw sequences through the shell script.
+   
    ref_seq/: Contains the reference species sequences obtained from BLAST results.
+   
    samples/: Contains the raw sample data (original FASTQ files) used for the analysis.
+   
    final_sequence.fasta: The final FASTA file used for generating the phylogenetic tree on the EBI network server.
 
 process_sequences.sh: Shell script used to convert raw FASTQ files into FASTA format for further analysis.
@@ -40,10 +45,16 @@ This script will read the data from fasta_output/ and red_seq/, generate the tra
 Use EBI tools to perform multiple sequence alignment and generate the phylogenetic tree. The final FASTA file (final_sequence.fasta) will be located in the samples/ folder and used for constructing the tree on the EBI network server.
 
 Results:
+
 The fasta_output/ folder contains the converted FASTA files.
+
 The ref_seq/ folder contains reference species data for comparison.
+
 The final_sequence.fasta file is the input used for constructing the phylogenetic tree.
+
 The tree will be generated on the EBI server and show the evolutionary relationships between the different samples.
 
+
 Contribution:
+
 This project was created and completed by Yanan Feng. If you have any questions or suggestions for improvements, feel free to contact me.
