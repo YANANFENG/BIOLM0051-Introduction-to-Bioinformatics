@@ -6,13 +6,14 @@ file structure：
 
 Sample_data/
 
-   fasta_output/: Contains the output files after processing the raw sequences through the shell script.
+            fasta_output/: Contains the output files after processing the raw sequences through the shell script.
    
-   ref_seq/: Contains the reference species sequences obtained from BLAST results.
+            ref_seq/: Contains the reference species sequences obtained from BLAST results.
    
-   samples/: Contains the raw sample data (original FASTQ files) used for the analysis.
+            samples/: Contains the raw sample data (original FASTQ files) used for the analysis.
    
-   final_sequence.fasta: The final FASTA file used for generating the phylogenetic tree on the EBI network server.
+            final_sequence.fasta: The final FASTA file used for generating the phylogenetic tree on the EBI network server.
+            
 
 process_sequences.sh: Shell script used to convert raw FASTQ files into FASTA format for further analysis.
 
@@ -22,27 +23,31 @@ README.md: This file, providing an overview of the project and usage instruction
 
 How to Use:
 1. Clone the Repository
-First, clone the repository from GitHub:
+   First, clone the repository from GitHub:
 
             git clone https://github.com/YANANFENG/BIOLM0051-Introduction-to-Bioinformatics.git
+            cd BIOLM0051-Introduction-to-Bioinformatics
+   
+3. Data Preprocessing
+   Convert raw FASTQ files to FASTA format using the provided shell script.
 
-2. Data Preprocessing
-The process_sequences.sh script will convert the raw FASTQ files into FASTA format. Run the script in the command line:
+   Note: Ensure your raw data(samples/) is in the raw_data/ directory (or update the path in the script).
 
-             bash process_sequences.sh
+             chmod +x process_sequences.sh
+             ./process_sequences.sh
 This script will convert the FASTQ files in the samples/ folder into FASTA files in the fasta_output/ folder.
 
 3. BLAST Alignment
-Align the translated FASTA files against the reference database to identify potential species. The reference species data can be found in the ref_seq/ folder.
+   Perform BLASTn search (manually via NCBI website or CLI) using the files in fasta_output/ to identify species and download reference sequences into ref_seq/.
 
 4. Translating DNA Sequences
-Use the translate_seq.py script to translate the DNA sequences into amino acid sequences for alignment. Run the Python script:
+   Use the translate_seq.py script to translate the DNA sequences into amino acid sequences for alignment. Run the Python script:
 
-             python translate_sequence.py.ipynb
-This script will read the data from fasta_output/ and red_seq/, generate the translated protein sequences.
+             python translate_seq.py
+Note: This script requires Biopython installed. It reads from fasta_output/ and ref_seq/ and outputs protein sequences.
 
 5. Phylogenetic Tree Construction
-Use EBI tools to perform multiple sequence alignment and generate the phylogenetic tree. The final FASTA file (final_sequence.fasta) will be located in the samples/ folder and used for constructing the tree on the EBI network server.
+   The file final_sequence.fasta contains the combined protein sequences. Upload this file to EBI Clustal Omega or MAFFT to generate the Multiple Sequence Alignment (MSA) and Phylogenetic Tree.
 
 Results:
 
@@ -54,7 +59,12 @@ The final_sequence.fasta file is the input used for constructing the phylogeneti
 
 The tree will be generated on the EBI server and show the evolutionary relationships between the different samples.
 
+Species Identified: Eubalaena japonica，Delphinapterus leucas，Thunnus thynnus，Dermochelys coriacea.
 
-Contribution:
+Conclusion: The shipment contains illegal wildlife products protected under CITES.
 
-This project was created and completed by Yanan Feng. If you have any questions or suggestions for improvements, feel free to contact me.
+
+Author
+Yanan Feng
+
+If you have any questions, feel free to contact me.
