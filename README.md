@@ -2,25 +2,21 @@ Introduction to Bioinformatics Assignment# BIOLM0051-Introduction-to-Bioinformat
 
 This repository contains scripts and data used for analyzing DNA sequence data, specifically for the task of identifying species in a set of seized meat samples. The analysis includes processing raw FASTQ data, converting it to FASTA, translating sequences to amino acids, and conducting species identification using BLAST and phylogenetic tree construction using EBI tools.
 
-file structure：
+Directory Structure
+The project is organized as follows:
 
-Sample_data/
+.
+├── process_sequences.sh      # Shell script for data preprocessing (FASTQ -> FASTA)
+├── translate_seq.py          # Python script using BioPython for translation & filtering
+├── README.md                 # Project documentation
+└── sample_data/
+    ├── samples/              # Raw Input: Original segmented FASTQ files (Samples A-D)
+    ├── fasta_output/         # Intermediate: Cleaned and merged FASTA sequences
+    ├── ref_seq/              # References: Reference sequences identified via BLAST
+    └── final_sequence/       # Final Output: Protein dataset used for Phylogenetic Tree construction
 
-            fasta_output/: Contains the output files after processing the raw sequences through the shell script.
-   
-            ref_seq/: Contains the reference species sequences obtained from BLAST results.
-   
-            samples/: Contains the raw sample data (original FASTQ files) used for the analysis.
-   
-            final_sequence.fasta: The final FASTA file used for generating the phylogenetic tree on the EBI network server.
-            
 
-process_sequences.sh: Shell script used to convert raw FASTQ files into FASTA format for further analysis.
-
-translate_seq.py: Python script (using BioPython) for translating the DNA sequences into protein sequences to help in alignment.
-
-README.md: This file, providing an overview of the project and usage instructions.
-
+    
 How to Use:
 1. Clone the Repository
    First, clone the repository from GitHub:
@@ -35,6 +31,7 @@ How to Use:
 
              chmod +x process_sequences.sh
              ./process_sequences.sh
+   
 This script will convert the FASTQ files in the samples/ folder into FASTA files in the fasta_output/ folder.
 
 3. BLAST Alignment
@@ -63,8 +60,18 @@ Species Identified: Eubalaena japonica，Delphinapterus leucas，Thunnus thynnus
 
 Conclusion: The shipment contains illegal wildlife products protected under CITES.
 
+Dependencies:
 
-Author
+Shell/Bash (for data cleaning)
+
+Python 3.x
+
+BioPython (for sequence translation) 
+
+Clustal Omega (Web server or command line tool)
+
+
+Author:
+
 Yanan Feng
-
 If you have any questions, feel free to contact me.
