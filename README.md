@@ -1,5 +1,7 @@
 Introduction to Bioinformatics Assignment# BIOLM0051-Introduction-to-Bioinformatics
 
+This project employs bioinformatics techniques to identify the species origin of four undeclared frozen meat samples (Samples A-D) seized by UK border forces. Using DNA barcoding of the mitochondrial cytochrome c oxidase subunit I (COI) gene, we aimed to determine if these samples belong to protected species listed under CITES.
+
 This repository contains scripts and data used for analyzing DNA sequence data, specifically for the task of identifying species in a set of seized meat samples. The analysis includes processing raw FASTQ data, converting it to FASTA, translating sequences to amino acids, and conducting species identification using BLAST and phylogenetic tree construction using EBI tools.
 
 Directory Structure
@@ -7,12 +9,19 @@ The project is organized as follows:
 
 .
 ├── process_sequences.sh      # Shell script for data preprocessing (FASTQ -> FASTA)
+
 ├── translate_seq.py          # Python script using BioPython for translation & filtering
+
 ├── README.md                 # Project documentation
+
 └── sample_data/
+
     ├── samples/              # Raw Input: Original segmented FASTQ files (Samples A-D)
+    
     ├── fasta_output/         # Intermediate: Cleaned and merged FASTA sequences
+    
     ├── ref_seq/              # References: Reference sequences identified via BLAST
+    
     └── final_sequence/       # Final Output: Protein dataset used for Phylogenetic Tree construction
 
 
@@ -74,4 +83,5 @@ Clustal Omega (Web server or command line tool)
 Author:
 
 Yanan Feng
+
 If you have any questions, feel free to contact me.
