@@ -21,20 +21,22 @@ The project is organized as follows:
     
 # How to Use:
 ## 1. Clone the Repository
-    ### First, clone the repository from GitHub:
-
+     First, clone the repository from GitHub:
+     
+```bash
             git clone https://github.com/YANANFENG/BIOLM0051-Introduction-to-Bioinformatics.git
             cd BIOLM0051-Introduction-to-Bioinformatics
-   
+```   
 ## 2. Data Preprocessing
-    ### Convert raw FASTQ files to FASTA format using the provided shell script.
+     Convert raw FASTQ files to FASTA format using the provided shell script.
 
     Note: Ensure your raw data(samples/) is in the raw_data/ directory (or update the path in the script).
     
-
+```text
              chmod +x process_sequences.sh
              ./process_sequences.sh
-   
+  ```
+ 
   ### This script will convert the FASTQ files in the samples/ folder into FASTA files in the fasta_output/ folder.
 
 ## 3. BLAST Alignment
@@ -42,11 +44,14 @@ The project is organized as follows:
 
 ## 4. Translating DNA Sequences
     Use the translate_seq.py script to translate the DNA sequences into amino acid sequences for alignment. Run the Python script:
-
+```python
              python translate_seq.py
+```
+
  Note: This script requires Biopython installed. It reads from fasta_output/ and ref_seq/ and outputs protein sequences.
 
 ## 5. Phylogenetic Tree Construction
+
     The file final_sequence.fasta contains the combined protein sequences. Upload this file to EBI Clustal Omega or MAFFT to generate the Multiple Sequence Alignment (MSA) and Phylogenetic Tree.
 
 # Results:
