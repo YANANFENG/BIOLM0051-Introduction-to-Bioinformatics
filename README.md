@@ -21,20 +21,21 @@ The project is organized as follows:
     
 # How to Use:
 ## 1. Clone the Repository
-    First, clone the repository from GitHub:
+    ### First, clone the repository from GitHub:
 
             git clone https://github.com/YANANFENG/BIOLM0051-Introduction-to-Bioinformatics.git
             cd BIOLM0051-Introduction-to-Bioinformatics
    
 ## 2. Data Preprocessing
-    Convert raw FASTQ files to FASTA format using the provided shell script.
+    ### Convert raw FASTQ files to FASTA format using the provided shell script.
 
     Note: Ensure your raw data(samples/) is in the raw_data/ directory (or update the path in the script).
+    
 
              chmod +x process_sequences.sh
              ./process_sequences.sh
    
-  This script will convert the FASTQ files in the samples/ folder into FASTA files in the fasta_output/ folder.
+  ### This script will convert the FASTQ files in the samples/ folder into FASTA files in the fasta_output/ folder.
 
 ## 3. BLAST Alignment
     Perform BLASTn search (manually via NCBI website or CLI) using the files in fasta_output/ to identify species and download reference sequences into ref_seq/.
